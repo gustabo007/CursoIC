@@ -7,7 +7,7 @@ import junit.framework.TestSuite;
 /**
  * Unit test for simple App.
  */
-public class Calculadora 
+public class CalculadoraTest 
     extends TestCase
 {
     /**
@@ -15,7 +15,7 @@ public class Calculadora
      *
      * @param testName name of the test case
      */
-    public Calculadoramvn( String testName )
+    public CalculadoraTest( String testName )
     {
         super( testName );
     }
@@ -28,13 +28,28 @@ public class Calculadora
         return new TestSuite( CalculadoraTest.class );
     }
 
-    /**
-     * Rigourous Test :-)
-     */
-    public void sumarPositivosTest()
+    public void testSumarPositivos()
     {
-        int resultadoEsperado = 14;
-        int resultado = Calculadora.suma(9,5);
-        assertEquals(resultado, resultadoEsperado);
+        int resultadoEsperado=14;
+        int resultado=Calculadora.suma(9,5);
+        assertEquals(resultado,resultadoEsperado );
+    }
+    public void testSumarNegativos()
+    {
+        int resultadoEsperado=14;
+        int resultado=Calculadora.suma(19,-5);
+        assertEquals(resultado,resultadoEsperado );
+    }
+    public void testSumarCero()
+    {
+        int resultadoEsperado=14;
+        int resultado=Calculadora.suma(14,0);
+        assertEquals(resultado,resultadoEsperado );
+    }
+    public void testSumarDosNegativos()
+    {
+        int resultadoEsperado=-14;
+        int resultado=Calculadora.suma(-9,-5);
+        assertEquals(resultado,resultadoEsperado );
     }
 }
